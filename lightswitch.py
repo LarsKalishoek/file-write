@@ -1,10 +1,19 @@
 import tkinter as tk
 from tkinter import ttk
+import os.path
+
+check = os.path.exists("actions.log")
+print(check)
+if check != True:
+    with open("actions.log", "a") as file:
+        file.write("Nieuw bestand \n")
+
 window = tk.Tk()
 event = 0
 state = 0
 # schijf hier tussen je code
 file = open("actions.log", "a")
+
 
 def button_pressed(event):
     global state, button
